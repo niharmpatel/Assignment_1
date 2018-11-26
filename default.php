@@ -7,7 +7,6 @@ require('header.php');
     <p>
         This site includes many features such as Inserting values to Sql Table and Save them, Displaying Sql table, Drop-down list, edit and delete, user's authentification  and many more
     </p>
-
 </main>
 </body>
 </html>

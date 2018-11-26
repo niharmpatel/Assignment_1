@@ -3,7 +3,6 @@ $title = "Login";
 require ('header.php')
 ?>
 <main class="container">
-    <h1>Log IN</h1>
     <?php
     if (isset($_GET['invalid'])){
         echo '<div class="alert-danger">Invalid Login</div>';
@@ -25,7 +24,6 @@ require ('header.php')
                 <input type="submit" value="login" class="btn" />
             </fieldset>
     </form>
-
 </main>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

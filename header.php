@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo $title; ?></title>
+    <title><?php echo $title;?></title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <script Src="js/jquery-3.3.1.min.js"></script>
@@ -15,7 +15,7 @@
         <a   class="navbar-brand" href="default.php">Song Playlist </a>
         <ul class="nav navbar-nav">
             <li><a href="playlist.php">Playlist</a> </li>
-            <li><a href="">abc</a> </li>
+            <li><a href="songs.php">Adding songs</a> </li>
         </ul>
         </div>
         <ul class="nav navbar-nav navbar-right">

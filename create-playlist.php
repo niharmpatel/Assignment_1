@@ -1,6 +1,6 @@
 <?php
 require ('header.php');
-//require ('auth.php');
+require ('auth.php');
 // adding variable to store vale from user
 $name=$_POST['name'];
 $artist=$_POST['artist'];
@@ -29,8 +29,7 @@ if (empty($songType)) {
 if ($ok) {
     //connect to the database
      require ('db.php');
-
-// add  query in database
+     // add  query in database
     if(empty($songid)){
         $sql = "INSERT INTO song (name, artist,album, songType) VALUES(:name, :artist, :album,:songType)";
     }
@@ -55,6 +54,5 @@ if ($ok) {
     header('location:playlist.php');
 }
 ?>
-
 </body>
 </html>

@@ -1,15 +1,13 @@
 <?php
 $title = "Songs Playlist";
 require ('header.php');
-//require ('auth.php');
-
+require ('auth.php');
 $name=null;
 $artist=null;
 $album=null;
 $songType=null;
 $songid=null;
 //$logo =null;
-
 if (!empty($_GET['songid'])){
     $songid=$_GET['songid'];
 
@@ -27,7 +25,7 @@ if (!empty($_GET['songid'])){
     $db= null;
 }
 ?>
-<form method="post" action="create-playlist.php">
+<form method="post" action="create-playlist.php" enctype="multipart/form-data">
     <!taking inputs from user>
 <fieldset>
     <label for="name">Name:</label>
@@ -43,7 +41,7 @@ if (!empty($_GET['songid'])){
 </fieldset>
     <fieldset>
         <label for="songType">Type:</label>
-        <select name="songType" id="songType" value="<?php echo $songType;?>">
+        <select name="songType" id="songType" value= <?php echo $songType;?>">
             <?php
             //connect to database
             require('db.php');
@@ -70,8 +68,8 @@ if (!empty($_GET['songid'])){
             ?>
         </select>
     </fieldset>
-<button class="text-success btn"> Save </button>
-    <input type="hidden" name="songid" id="songid" value="<?php echo $songid;?>" />
+<button> Save </button>
+    <input  type="hidden" name="songid" id="songid" value"<?php echo $songid; ?>"  />
 </form>
 </body>
 </html>
