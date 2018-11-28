@@ -30,7 +30,8 @@
                 <li><a href="login.php">Login</a></li>';
             }
             else{
-                echo ' <a href="logout.php">Logout</a>';
+                echo '<li><a href="#">' . $_SESSION['username'] . '</a></li>
+                        <li><a href="logout.php">Logout</a></li>';
             }
             }
             catch (Exception $e){
