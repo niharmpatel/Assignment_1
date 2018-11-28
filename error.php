@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-<h1>Something went wrong </h1>
-<p>We've looked upon your request and try to reach on it </p>
+<?php
+// adding header
+$title = "Error";
+require ('header.php');
+?>
+<h1 class="text-info">Something went wrong </h1>
+<p class="text-info">We've looked upon your request and try to reach on it </p>
 
 </body>
 </html>
