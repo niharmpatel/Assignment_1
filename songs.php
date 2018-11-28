@@ -108,7 +108,7 @@ catch (Exception $e){
         ?>
     </div>
 <button class="badge-success"> Save </button>
-   <input  type="hidden" name="songId" id="songId" value"<?php echo $songId; ?>"  />
+   <input  type="hidden" name="songId" id="songId" value="<?php echo $songId; ?>"  />
 </form>
 </body>
 </html>

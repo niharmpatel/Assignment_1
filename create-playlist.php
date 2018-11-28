@@ -29,25 +29,26 @@ if (empty($songType)) {
     echo "Song type is Required.<br/>";
     $ok = false;
 }
-if(isset($_FILES['logo'])){
-    $logoFile=$_FILES['logo'];
-    // check file is empty or not
-    if($logoFile['size']>0){
-        $logo=session_id() ."-" .$logoFile['name'];
-        $fileType =null;
-        $finfo= finfo_open(FILEINFO_MIME_TYPE);
-        $fileType=finfo_file($finfo,$logoFile['tmp_name']);
-// check file is either JPG or PNG
-        if(($fileType !="image/jpeg") &&($fileType != "image/png")){
-            echo 'Please upload JPG or PNG file<br />';
-            $ok=false;
-        }
-        // move file to permanent location from temporary location
-        else{
-            move_uploaded_file($logoFile['tmp_name'],"img/{$logo}");
+    if (isset($_FILES['logo'])) {
+        $logoFile = $_FILES['logo'];
+        if ($logoFile['size'] > 0) {
+            // generate unique file name
+            $logo = session_id() . "-" . $logoFile['name'];
+            // check file type
+            $fileType = null;
+            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+            $fileType = finfo_file($finfo, $logoFile['tmp_name']);
+            // allow only jpeg & png
+            if (($fileType != "image/jpeg") && ($fileType != "image/png")) {
+                echo 'Please upload a valid JPG or PNG logo<br />';
+                $ok = false;
+            }
+            else {
+                // save the file
+                move_uploaded_file($logoFile['tmp_name'], "img/{$logo}");
+            }
         }
     }
-}
 
 // only save if no errors found
 if ($ok) {
