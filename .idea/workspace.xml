@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38205f9d-bb8c-4416-9df4-c1a558219d59" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/404.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/error.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/upload-t.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/upload-ts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create-playlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/create-playlist.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/playlist.php" afterDir="false" />
@@ -212,12 +217,12 @@
       <workItem from="1542726186413" duration="1427000" />
       <workItem from="1542835382211" duration="58574000" />
       <workItem from="1543229762489" duration="13154000" />
-      <workItem from="1543315707699" duration="15444000" />
+      <workItem from="1543315707699" duration="15699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131229000" />
+    <option name="totallyTimeSpent" value="131484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />

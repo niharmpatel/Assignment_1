@@ -63,16 +63,7 @@ if (!empty($_GET['songid'])){
                 }
             }
             //disconnect with database
-            $db= null;
-            ?>
-        </select>
-    </fieldset>
-    <fieldset>
-        <label for="logo" class="col">Logo:</label>
-        <input type="file" name="logo" id="logo"/>
-    </fieldset>
-    <div >
-        <?php
+
         if(isset($logo)){
             echo "<img src=\"img/$logo\" alt=\"Logo\"/>" ;
         }
