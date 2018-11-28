@@ -17,14 +17,21 @@ $cmd->execute();
 //fetch the data
 $song = $cmd ->fetchAll();
 //creating table to store value of database's table
-echo '<table ><thead> <th>Name</th> <th> Artist</th> <th>Album</th> <th>Type</th>';
+echo '<table ><thead> <th>Name</th><th>Logo</th> <th> Artist</th> <th>Album</th> <th>Type</th>';
 if(isset($_SESSION['userId'])) {
     echo '<th>Actions</th>';
 }
 echo'</thead>';
 //loop the data
 foreach ($song as $s){
-    echo "<tr><td>{$s['name']}</td>
+    echo "<tr>
+          <td>{$s['name']}</td>
+          <td>";
+    if(isset($s['logo'])){
+        echo "<img src=\"img/{$s['logo']}\" alt=\"Logo\" height=\"50px\">";
+    }
+
+    echo"</td>  
           <td> {$s['artist']}</td>
           <td> {$s['album']}</td>
           <td> {$s['songType']}</td>

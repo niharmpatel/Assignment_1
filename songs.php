@@ -7,7 +7,7 @@ $artist=null;
 $album=null;
 $songType=null;
 $songid=null;
-//$logo =null;
+$logo =null;
 if (!empty($_GET['songid'])){
     $songid=$_GET['songid'];
 
@@ -21,11 +21,11 @@ if (!empty($_GET['songid'])){
     $artist=$s['artist'];
     $album=$s['album'];
     $songType=$s['songType'];
-    //$logo =$s['logo'];
+    $logo =$s['logo'];
     $db= null;
 }
 ?>
-<form method="post" action="create-playlist.php" enctype="multipart/form-data">
+<form class="form-control-plaintext" method="post" action="create-playlist.php" enctype="multipart/form-data">
     <!taking inputs from user>
 <fieldset>
     <label for="name">Name:</label>
@@ -67,8 +67,19 @@ if (!empty($_GET['songid'])){
             ?>
         </select>
     </fieldset>
-<button > Save </button>
-    <input  type="hidden" name="songid" id="songid" value"<?php echo $songid; ?>"  />
+    <fieldset>
+        <label for="logo" class="col">Logo:</label>
+        <input type="file" name="logo" id="logo"/>
+    </fieldset>
+    <div >
+        <?php
+        if(isset($logo)){
+            echo "<img src=\"img/$logo\" alt=\"Logo\"/>" ;
+        }
+        ?>
+    </div>
+<button class="btn-toolbar"> Save </button>
+   <input  type="hidden" name="songid" id="songid" value"<?php echo $songid; ?>"  />
 </form>
 </body>
 </html>
