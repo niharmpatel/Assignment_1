@@ -21,7 +21,7 @@ if (!empty($_GET['songId'])){
     $sql= "SELECT * FROM song WHERE songId=:songId";
     $cmd=$db->prepare($sql);
     // binding parameter
-    $cmd->bindParam('songId',$songId,PDO::PARAM_INT);
+    $cmd->bindParam(':songId',$songId,PDO::PARAM_INT);
     //execute the query
     $cmd->execute();
     // fetch the data

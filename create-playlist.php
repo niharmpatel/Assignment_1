@@ -53,12 +53,16 @@ if(isset($_FILES['logo'])){
 if ($ok) {
     //connect to the database
      require ('db.php');
+
       //add  query in database to insert and update data
-    if(empty($songId)){
-        $sql = "INSERT INTO song (name,logo,artist,album,songType) VALUES(:name,:logo,:artist,:album,:songType)";
+    if(!empty($songId)){
+        //$sql = "INSERT INTO song (name,logo,artist,album,songType) VALUES(:name,:logo,:artist,:album,:songType)";
+        $sql = "UPDATE song SET name=:name,logo=:logo,artist=:artist,album=:album,songType=:songType WHERE songId=:songId";
     }
     else {
-        $sql = "UPDATE song SET name=:name,logo=:logo,artist=:artist,album=:album,songType=:songType WHERE songId=:songId";
+        //$sql = "UPDATE song SET name=:name,logo=:logo,artist=:artist,album=:album,songType=:songType WHERE songId=:songId";
+        $sql = "INSERT INTO song (name,logo,artist,album,songType) VALUES(:name,:logo,:artist,:album,:songType)";
+
     }
 
     $cmd=$db->prepare($sql);

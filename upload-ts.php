@@ -11,7 +11,7 @@ echo"Temp Location:{$file['tmp_name']}<br/>";
 $finfo=finfo_open(FILEINFO_MIME_TYPE);
 echo "Type:" . finfo_file($finfo,$file['tmp_name']) . "<br/>";
 //move file from temporary location to permanent location
-move_uploaded_file($file['tmp_name'], "uploads/{$file('name')}");
+move_uploaded_file($file['tmp_name'], "img/{$file('name')}");
 }
 catch (Exception $e){
     mail('niharmpatel@gmail.com','Assignment error', $e);
