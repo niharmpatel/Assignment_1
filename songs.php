@@ -41,7 +41,7 @@ if (!empty($_GET['songid'])){
 </fieldset>
     <fieldset>
         <label for="songType">Type:</label>
-        <select name="songType" id="songType" value= <?php echo $songType;?>">
+        <select name="songType" id="songType" value="<?php echo $songType;?>">
             <?php
             //connect to database
             require('db.php');
@@ -55,7 +55,6 @@ if (!empty($_GET['songid'])){
             $types = $cmd->fetchAll();
             //loop the data
             foreach ($types as $t) {
-                //echo"<option>{$t['songType']}</option>";
                 if ($t['songType'] == $songType) {
                     echo "<option selected>{$t['songType']}</option>";
                 }
@@ -68,7 +67,7 @@ if (!empty($_GET['songid'])){
             ?>
         </select>
     </fieldset>
-<button> Save </button>
+<button > Save </button>
     <input  type="hidden" name="songid" id="songid" value"<?php echo $songid; ?>"  />
 </form>
 </body>

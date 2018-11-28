@@ -26,7 +26,7 @@
                 <li><a href="login.php">Login</a></li>';
             }
             else{
-                echo '<li><a href="#"' .$_SESSION['username']. '</a></li>
+                echo '<li><a href="#"'. $_SESSION['username'] .'</a></li>
                 <li> <a href="logout.php">Logout</a></li>';
             }
             ?>

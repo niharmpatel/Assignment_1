@@ -7,22 +7,22 @@ $artist=$_POST['artist'];
 $album=$_POST['album'];
 $songType= $_POST['songType'];
 $songid=$_POST['sondid'];
-// validate each feild of input
+// validate each field of input
 $ok = true;
 if (empty($name)) {
-    echo "Name is Required.<br />";
+    echo "Name is Required.<br/>";
     $ok = false;
 }
 if (empty($artist)) {
-    echo "Artist name is Required.<br />";
+    echo "Artist name is Required.<br/>";
     $ok = false;
 }
 if (empty($album)) {
-    echo "Album name is Required.<br />";
+    echo "Album name is Required.<br/>";
     $ok = false;
 }
 if (empty($songType)) {
-    echo "Song type is Required.<br />";
+    echo "Song type is Required.<br/>";
     $ok = false;
 }
 // only save if no errors found
@@ -31,10 +31,10 @@ if ($ok) {
      require ('db.php');
      // add  query in database
     if(empty($songid)){
-        $sql = "INSERT INTO song (name, artist,album, songType) VALUES(:name, :artist, :album,:songType)";
+        $sql = "INSERT INTO song (name,artist,album,songType) VALUES(:name,:artist,:album,:songType)";
     }
     else {
-        $sql = " UPDATE  song SET name=:name,artist=:artist,album=:album, songType=:songType WHERE songid=:songid";
+        $sql = " UPDATE song SET name=:name,artist=:artist,album=:album, songType=:songType WHERE songid=:songid";
     }
     $cmd = $db->prepare($sql);
     // Setting parameter for each variable

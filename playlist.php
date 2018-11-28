@@ -1,9 +1,11 @@
 <?php
 $title = "Playlist";
 require ('header.php');
-?>
-<! adding link of web-page to save song in a playlist ->
-<a href="songs.php">Add a new Song</a>
+// adding link of web-page to save song in a playlist
+if (isset($_SESSION['userId'])) {
+    echo '<a href="songs.php">Add a new Song</a>';
+}
+ ?>
 <h1> Playlist </h1>
 <?php
 // connect to the database
@@ -14,7 +16,7 @@ $cmd = $db->prepare($sql);
 $cmd->execute();
 //fetch the data
 $song = $cmd ->fetchAll();
-//creating table to store value of database's tabel
+//creating table to store value of database's table
 echo '<table ><thead> <th>Name</th> <th> Artist</th> <th>Album</th> <th>Type</th>';
 if(isset($_SESSION['userId'])) {
     echo '<th>Actions</th>';
@@ -32,7 +34,6 @@ foreach ($song as $s){
           <a href=\"delete.php?songid={$s['songid']}\">Delete</a>";
         }
 echo "</td></tr>";
-
 }
 echo '</table>';
 // disconnect to database
